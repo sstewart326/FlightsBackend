@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/responseBase" 
+xmlns:rb="http://www.example.org/responseBase" 
+elementFormDefault="qualified">
+
+	<complexType name="operationStatus">
+		<annotation>
+			<documentation xml:lang="en">
+				<![CDATA[Operation Status]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="operationStatus" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="operationMessage" type="string" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+
+</schema>

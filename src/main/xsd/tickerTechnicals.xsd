@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/tickerTechnicals" 
+xmlns:tt="http://www.example.org/tickerTechnicals" 
+xmlns:rb="http://www.example.org/responseBase"
+elementFormDefault="qualified">
+
+	<import namespace="http://www.example.org/responseBase" schemaLocation="responseBase.xsd"/>
+
+	<complexType name="tickerTechnicals">
+		<annotation>
+			<documentation xml:lang="en">
+				<![CDATA[Technicals]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="name" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="averageVolume" type="long" minOccurs="0" maxOccurs="1"/>
+			<element name="volume" type="long" minOccurs="0" maxOccurs="1"/>
+			<element name="previousDayClosingPrice" type="decimal" minOccurs="0" maxOccurs="1"/>
+			<element name="openPrice" type="decimal" minOccurs="0" maxOccurs="1"/>
+			<element name="currentPrice" type="decimal" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="tickerTechnicalsResponse">
+		<annotation>
+			<documentation xml:lang="en">
+				<![CDATA[Ticker Technicals]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="operationStatus" type="rb:operationStatus" minOccurs="1" maxOccurs="1"/>
+			<element name="tickerTechnicals" type="tt:tickerTechnicals" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+	<element name="tickerTechnicalsResponse" type="tt:tickerTechnicalsResponse"/>
+		
+		
+	<complexType name="tickerTechnicalsRequest">
+		<annotation>
+			<documentation xml:lang="en">
+				<![CDATA[Ticker Technicals]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="ticker" type="string" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>	
+	
+	<element name="tickerTechnicalsRequest" type="tt:tickerTechnicalsRequest"/>
+	
+</schema>

@@ -1,0 +1,6 @@
+com\etf\volume\simulator\domain\ticker\technicals\TickerTechnicalsResponse.class
+com\etf\volume\simulator\domain\ticker\technicals\TickerTechnicals.class
+com\etf\volume\simulator\domain\ticker\technicals\ObjectFactory.class
+com\etf\volume\simulator\domain\ticker\technicals\OperationStatus.class
+com\etf\volume\simulator\domain\ticker\technicals\TickerTechnicalsRequest.class
+com\etf\volume\simulator\domain\ticker\technicals\package-info.class
