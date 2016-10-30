@@ -7,7 +7,7 @@ elementFormDefault="qualified">
 
 	<import namespace="http://www.example.org/responseBase" schemaLocation="responseBase.xsd"/>
 
-	<complexType name="tickerTechnicals">
+	<complexType name="TickerTechnicals">
 		<annotation>
 			<documentation xml:lang="en">
 				<![CDATA[Technicals]]>
@@ -23,7 +23,7 @@ elementFormDefault="qualified">
 		</sequence>
 	</complexType>
 	
-	<complexType name="tickerTechnicalsResponse">
+	<complexType name="TickerTechnicalsResponse">
 		<annotation>
 			<documentation xml:lang="en">
 				<![CDATA[Ticker Technicals]]>
@@ -31,14 +31,14 @@ elementFormDefault="qualified">
 		</annotation>
 		<sequence>
 			<element name="operationStatus" type="rb:operationStatus" minOccurs="1" maxOccurs="1"/>
-			<element name="tickerTechnicals" type="tt:tickerTechnicals" minOccurs="1" maxOccurs="1"/>
+			<element name="tickerTechnicals" type="tt:TickerTechnicals" minOccurs="1" maxOccurs="1"/>
 		</sequence>
 	</complexType>
 	
-	<element name="tickerTechnicalsResponse" type="tt:tickerTechnicalsResponse"/>
+	<element name="tickerTechnicalsResponse" type="tt:TickerTechnicalsResponse"/>
 		
 		
-	<complexType name="tickerTechnicalsRequest">
+	<complexType name="TickerTechnicalsRequest">
 		<annotation>
 			<documentation xml:lang="en">
 				<![CDATA[Ticker Technicals]]>
@@ -49,6 +49,34 @@ elementFormDefault="qualified">
 		</sequence>
 	</complexType>	
 	
-	<element name="tickerTechnicalsRequest" type="tt:tickerTechnicalsRequest"/>
+	<element name="tickerTechnicalsRequest" type="tt:TickerTechnicalsRequest"/>
+	
+	<complexType name="RSIStatusRequest">
+		<annotation>
+			<documentation xml:lang="en">
+				<![CDATA[RSI Status Request]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="ticker" type="string" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="RSIStatusResponse">
+		<annotation>
+			<documentation xml:lang="en">
+				<![CDATA[RSI Status Response]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="operationStatus" type="rb:operationStatus" minOccurs="1" maxOccurs="1"/>
+			<element name="name" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="rsiValue" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="rsiStrength" type="string" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+	<element name="rsiStatusRequest" type="tt:RSIStatusRequest"/>
+	<element name="rsiStatusResponse" type="tt:RSIStatusResponse"/>
 	
 </schema>
